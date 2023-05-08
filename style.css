@@ -9,11 +9,11 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #a0f8ef;
+    background-color: #ffffff;
   }
   
   #container {
-    background: linear-gradient(to bottom, #0771db, #7008e5);
+    background: linear-gradient(to bottom, #ff5b3b,  #ff3a93);
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -32,16 +32,17 @@
     width: 150px;
   }
   button {
+    font-weight: bold;
     padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
     border: none;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #d10862;
+    color: rgb(235, 231, 231);
     cursor: pointer;
   }
   button:hover {
-    background-color: #3e8e41;
+    background-color: #ff0b79;
   }
   #output {
     font-size: 2em;

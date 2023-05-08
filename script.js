@@ -27,7 +27,7 @@ function calculateGPA() {
   for (let i = 0; i < numOfSubjects; i++) {
     const marks = parseFloat(marksInputs[i].value);
     const credits = parseFloat(creditsInputs[i].value);
-    if (isNaN(marks) || isNaN(credits) || marks < 0 || marks > 100) {
+    if (isNaN(marks) || isNaN(credits) || marks < 0 || marks > 100 || credits < 1 || credits > 5) {
       alert('Please enter valid marks and credits');
       return;
     }
@@ -39,27 +39,28 @@ function calculateGPA() {
 
   const gpa = totalGpaTimesCredits / totalCredits;
   const averageMarks = totalMarks / numOfSubjects;
+  const accumulatedGpa = (totalGpaTimesCredits / totalCredits) * numOfSubjects;
   const output = `
     <h2>Transcript Information</h2>
     <p>Total Marks: ${totalMarks}</p>
-    <p>Average Marks: ${averageMarks.toFixed(2)}</p>
+    <p>Average Marks: ${averageMarks.toFixed(4)}</p>
     <p>Total Credits: ${totalCredits}</p>
-    <p>Total GPA: ${gpa.toFixed(2)}</p>
-    <p>Accumulated GPA: ${(gpa / numOfSubjects).toFixed(2)}</p>
+    <p>Total GPA: ${gpa.toFixed(4)}</p>
+    <p>Accumulated GPA: ${(gpa / numOfSubjects).toFixed(4)}</p>
   `;
   document.getElementById('output').innerHTML = output;
 }
 
 function calculateGpaFromMarks(marks) {
-  if (marks >= 90) {
-    return 4;
-  } else if (marks >= 80) {
-    return 3;
-  } else if (marks >= 70) {
-    return 2;
-  } else if (marks >= 60) {
-    return 1;
+  if (marks >= 90 && marks <= 100) {
+    return 4.0;
+  } else if (marks >= 80 && marks < 90) {
+    return 3.0;
+  } else if (marks >= 70 && marks < 80) {
+    return 2.0;
+  } else if (marks >= 60 && marks < 70) {
+    return 1.0;
   } else {
-    return 0;
+    return 0.0;
   }
 }
