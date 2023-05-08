@@ -9,7 +9,21 @@
     <title>GPACalculator</title>
 </head>
 <body>
-  
+    <div id="container">
+        <h1>GPA Calculator</h1>
+        <div id="inputFields">
+          <div>
+            <input type="text" placeholder="Enter Marks" class="marksInput">
+            <input type="text" placeholder="Enter Credits" class="creditsInput">
+          </div>
+        </div>
+        <div>
+          <button onclick="addInput()">Add Subject</button>
+          <button onclick="calculateGPA()">Calculate GPA</button>
+        </div>
+        <div id="output"></div>
+      </div>
+      
 </body>
 
 </html>
