@@ -18,6 +18,7 @@ function removeInput(button) {
 }
 
 function calculateGPA() {
+  const numOfSubjects = document.getElementsByClassName('marksInput').length;
   let totalCredits = 0;
   let totalGpaTimesCredits = 0;
   let totalMarks = 0;
