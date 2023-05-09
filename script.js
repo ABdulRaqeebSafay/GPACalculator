@@ -46,7 +46,7 @@ function calculateGPA() {
     <p>Average Marks: ${averageMarks.toFixed(4)}</p>
     <p>Total Credits: ${totalCredits}</p>
     <p>Total GPA: ${gpa.toFixed(4)}</p>
-    <p>Accumulated GPA: ${(gpa / numOfSubjects).toFixed(4)}</p>
+    <p>Accumulated GPA: ${(accumulatedGpa).toFixed(4)}</p>
   `;
   document.getElementById('output').innerHTML = output;
 }
