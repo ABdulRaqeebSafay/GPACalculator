@@ -33,20 +33,18 @@ function calculateGPA() {
     }
     const gpa = calculateGpaFromMarks(marks);
     totalCredits += credits;
-    totalGpaTimesCredits += gpa * credits;
+    totalGpaTimesCredits += (gpa * credits);
     totalMarks += marks;
   }
 
   const gpa = totalGpaTimesCredits / totalCredits;
   const averageMarks = totalMarks / numOfSubjects;
-  const accumulatedGpa = (totalGpaTimesCredits / totalCredits) * numOfSubjects;
   const output = `
     <h2>Transcript Information</h2>
     <p>Total Marks: ${totalMarks}</p>
-    <p>Average Marks: ${averageMarks.toFixed(4)}</p>
+    <p>Average Marks: ${averageMarks.toFixed(2)}</p>
     <p>Total Credits: ${totalCredits}</p>
-    <p>Total GPA: ${gpa.toFixed(4)}</p>
-    <p>Accumulated GPA: ${(accumulatedGpa).toFixed(4)}</p>
+    <p>Total GPA: ${gpa.toFixed(2)}</p>
   `;
   document.getElementById('output').innerHTML = output;
 }
