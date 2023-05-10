@@ -35,7 +35,7 @@ function calculateGPA() {
     const gpa = calculateGpaFromMarks(marks);
     totalCredits += credits;
     totalGpaTimesCredits += (gpa * credits);
-    totalMarks += marks;
+    totalMarks += calculateGpaFromMarks(marks) * credits;
   }
 
   const gpa = totalGpaTimesCredits / totalCredits;
