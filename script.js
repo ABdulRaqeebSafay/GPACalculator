@@ -1,7 +1,13 @@
-let numOfSubjects = 1;
+const maxCredits = 25;
+const maxSubjects = 8;
 
 function addInput() {
-  numOfSubjects++;
+  const numOfSubjects = document.getElementsByClassName('marksInput').length;
+  if (numOfSubjects >= maxSubjects) {
+    alert('Maximum number of subjects reached');
+    return;
+  }
+
   const inputFields = document.getElementById('inputFields');
   const newInput = `
     <div>
@@ -12,13 +18,18 @@ function addInput() {
   `;
   inputFields.insertAdjacentHTML('beforeend', newInput);
 }
+
 function removeInput(button) {
-  numOfSubjects--;
   button.parentElement.remove();
 }
 
 function calculateGPA() {
   const numOfSubjects = document.getElementsByClassName('marksInput').length;
+  if (numOfSubjects === 0) {
+    alert('Please add at least one subject');
+    return;
+  }
+
   let totalCredits = 0;
   let totalGpaTimesCredits = 0;
   let totalMarks = 0;
@@ -34,8 +45,13 @@ function calculateGPA() {
     }
     const gpa = calculateGpaFromMarks(marks);
     totalCredits += credits;
-    totalGpaTimesCredits += (gpa * credits);
-    totalMarks += calculateGpaFromMarks(marks) * credits;
+    totalGpaTimesCredits += gpa * credits;
+    totalMarks += marks;
+  }
+
+  if (totalCredits > 25) {
+    alert('Total credits exceed the maximum limit of 25');
+    return;
   }
 
   const gpa = totalGpaTimesCredits / totalCredits;
@@ -49,6 +65,7 @@ function calculateGPA() {
   `;
   document.getElementById('output').innerHTML = output;
 }
+
 
 function calculateGpaFromMarks(marks) {
   if (marks >= 90 && marks <= 100) {
