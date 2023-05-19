@@ -1,50 +1,145 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+#container {
+  background: linear-gradient(to bottom, #ff5b3b, #ff3a93);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input[type=text] {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px #aaa;
+  width: 150px;
+}
+
+button {
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #d10862;
+  color: rgb(235, 231, 231);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff0b79;
+}
+
+#output {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+/* Media Queries for Mobile Devices */
+@media only screen and (max-width: 600px) {
   body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #ffffff;
+    align-items: flex-start;
   }
-  
+
   #container {
-    background: linear-gradient(to bottom, #ff5b3b,  #ff3a93);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 90%;
   }
+
   h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 2em;
+    margin-bottom: 15px;
   }
+
+  input[type=text] {
+    padding: 8px;
+    margin: 8px;
+    width: 100%;
+  }
+
+  button {
+    padding: 8px 16px;
+    margin: 8px;
+  }
+
+  #output {
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+}
+
+/* Media Queries for Tablets and Laptops */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  #container {
+    width: 60%;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 18px;
+  }
+
   input[type=text] {
     padding: 10px;
     margin: 10px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0 0 5px #aaa;
-    width: 150px;
+    width: 200px;
   }
+
   button {
-    font-weight: bold;
-    padding: 10px 20px;
+    padding: 12px 24px;
     margin: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #d10862;
-    color: rgb(235, 231, 231);
-    cursor: pointer;
   }
-  button:hover {
-    background-color: #ff0b79;
+
+  #output {
+    font-size: 1.8em;
+    margin-top: 18px;
   }
+}
+
+/* Media Queries for Landscape Tablets and Laptops */
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  #container {
+    width: 40%;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  input[type=text] {
+    padding: 12px;
+    margin: 12px;
+    width: 250px;
+  }
+
+  button {
+    padding: 14px 28px;
+    margin: 12px;
+  }
+
   #output {
     font-size: 2em;
     margin-top: 20px;
   }
+}
