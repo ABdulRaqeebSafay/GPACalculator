@@ -4,7 +4,7 @@ const maxSubjects = 8;
 function addInput() {
   const numOfSubjects = document.getElementsByClassName('marksInput').length;
   if (numOfSubjects >= maxSubjects) {
-    alert('Maximum number of subjects reached');
+    alert('Maximum Number Of Subjects Reached');
     return;
   }
 
@@ -26,7 +26,7 @@ function removeInput(button) {
 function calculateGPA() {
   const numOfSubjects = document.getElementsByClassName('marksInput').length;
   if (numOfSubjects === 0) {
-    alert('Please add at least one subject');
+    alert('Please Add Up At Least One Subject');
     return;
   }
 
@@ -40,7 +40,7 @@ function calculateGPA() {
     const marks = parseFloat(marksInputs[i].value);
     const credits = parseFloat(creditsInputs[i].value);
     if (isNaN(marks) || isNaN(credits) || marks < 0 || marks > 100 || credits < 1 || credits > 5) {
-      alert('Please enter valid marks and credits');
+      alert('Please Enter Valid Marks And/Or Credits');
       return;
     }
     const gpa = calculateGpaFromMarks(marks);
@@ -50,7 +50,7 @@ function calculateGPA() {
   }
 
   if (totalCredits > 25) {
-    alert('Total credits exceed the maximum limit of 25');
+    alert('You Can Not Have More Than 25 Credits Per Semester');
     return;
   }
 
